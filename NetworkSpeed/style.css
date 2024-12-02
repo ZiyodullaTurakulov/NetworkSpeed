@@ -1,0 +1,254 @@
+:root {
+    --cyber-neon: #08fdd8;
+    --cyber-dark: #1d1d1d;
+    --cyber-darker: #151515;
+}
+
+@keyframes neonGlow {
+    0%, 100% {
+        color: #08fdd8;
+        text-shadow: 0 0 5px #08fdd8, 
+                     0 0 10px #08fdd8, 
+                     0 0 15px #08fdd8, 
+                     0 0 20px #08fdd8;
+    }
+    50% {
+        color: #00ffff;
+        text-shadow: 0 0 10px #00ffff, 
+                     0 0 20px #00ffff, 
+                     0 0 30px #00ffff, 
+                     0 0 40px #00ffff;
+    }
+}
+
+body {
+    background-color: var(--cyber-darker);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.navbar {
+    background-color: var(--cyber-dark);
+    border-bottom: 2px solid var(--cyber-neon);
+}
+
+.navbar-brand {
+    color: var(--cyber-neon) !important;
+    animation: neonGlow 1.5s infinite alternate;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.cyber-card {
+    background: rgba(20, 30, 48, 0.9);
+    border: 2px solid var(--cyber-neon);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(8, 253, 216, 0.2);
+}
+
+.btn-cyberpunk {
+    background: var(--cyber-neon);
+    color: var(--cyber-darker);
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-cyberpunk:hover {
+    background: #fff;
+    box-shadow: 0 0 20px var(--cyber-neon);
+}
+
+.input-group {
+    border: 1px solid var(--cyber-neon);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#address-input, #address-type {
+    background: var(--cyber-dark);
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+}
+
+#address-input:focus, #address-type:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: var(--cyber-neon);
+}
+
+.speedometer {
+    width: 300px;
+    height: 150px;
+    background: var(--cyber-dark);
+    margin: 0 auto;
+    border-radius: 150px 150px 0 0;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--cyber-neon);
+    box-shadow: 0 0 20px rgba(8, 253, 216, 0.3);
+}
+
+.speed-needle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    height: 120px;
+    background: var(--cyber-neon);
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
+    transition: transform 0.5s ease-out;
+    box-shadow: 0 0 10px var(--cyber-neon);
+}
+
+.speed-display {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.speed-display h2 {
+    color: var(--cyber-neon);
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px var(--cyber-neon);
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.speed-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: var(--cyber-dark);
+    border-radius: 10px;
+    border: 1px solid var(--cyber-neon);
+    box-shadow: 0 0 15px rgba(8, 253, 216, 0.2);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item i {
+    color: var(--cyber-neon);
+    margin-right: 10px;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.device-info {
+    background: var(--cyber-dark);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--cyber-neon);
+    box-shadow: 0 0 15px rgba(8, 253, 216, 0.2);
+}
+
+.info-item {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid rgba(8, 253, 216, 0.2);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: var(--cyber-neon);
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--cyber-neon);
+}
+
+.chart-container {
+    height: 300px;
+    position: relative;
+    padding: 10px;
+    background: var(--cyber-dark);
+    border-radius: 10px;
+    border: 1px solid var(--cyber-neon);
+    box-shadow: 0 0 15px rgba(8, 253, 216, 0.2);
+}
+
+.table {
+    color: #fff;
+    border-color: var(--cyber-neon);
+}
+
+.table thead th {
+    border-color: var(--cyber-neon);
+    color: var(--cyber-neon);
+    text-shadow: 0 0 5px var(--cyber-neon);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table td {
+    border-color: rgba(8, 253, 216, 0.2);
+}
+
+.status-online {
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.status-offline {
+    color: #ff0000;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+/* Cyber elementlar uchun hover effektlari */
+.cyber-card:hover {
+    box-shadow: 0 0 25px rgba(8, 253, 216, 0.4);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(8, 253, 216, 0.1);
+    cursor: pointer;
+}
+
+/* Responsive dizayn uchun */
+@media (max-width: 768px) {
+    .speedometer {
+        width: 250px;
+        height: 125px;
+    }
+
+    .speed-needle {
+        height: 100px;
+    }
+
+    .speed-display h2 {
+        font-size: 2em;
+    }
+
+    .speed-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-item {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(8, 253, 216, 0.2);
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+}

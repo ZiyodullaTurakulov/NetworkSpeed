@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarmoq Qurilmalari Monitoring</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-network-wired"></i> LocalNet Analytics
+            </a>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="cyber-card">
+                    <h3><i class="fas fa-search"></i> Qurilma qidirish</h3>
+                    <div class="input-group mb-3">
+                        <input type="text" id="address-input" class="form-control" 
+                               placeholder="IP yoki MAC manzilni kiriting">
+                        <select id="address-type" class="form-select">
+                            <option value="ip">IP Manzil</option>
+                            <option value="mac">MAC Manzil</option>
+                        </select>
+                        <button id="test-device" class="btn btn-cyberpunk">
+                            <i class="fas fa-play"></i> Testni Boshlash
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="cyber-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Tezlik Ko'rsatkichi</h3>
+                    <div class="speedometer-container">
+                        <div class="speedometer">
+                            <div class="speed-needle"></div>
+                            <div class="speed-display">
+                                <h2 id="speed">0</h2>
+                                <p>Mbps</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speed-stats mt-3">
+                        <div class="stat-item">
+                            <i class="fas fa-download"></i>
+                            <span id="download-speed">0 Mbps</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-upload"></i>
+                            <span id="upload-speed">0 Mbps</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="ping">0 ms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cyber-card mt-4">
+                    <h3><i class="fas fa-info-circle"></i> Qurilma Ma'lumotlari</h3>
+                    <div class="device-info">
+                        <div class="info-item">
+                            <span class="info-label">IP Manzil:</span>
+                            <span id="device-ip">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">MAC Manzil:</span>
+                            <span id="device-mac">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Qurilma Nomi:</span>
+                            <span id="device-hostname">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Holati:</span>
+                            <span id="device-status">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="cyber-card">
+                    <h3><i class="fas fa-chart-line"></i> Tezlik Grafigi</h3>
+                    <div class="chart-container">
+                        <canvas id="speedChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="cyber-card">
+                    <h3><i class="fas fa-history"></i> Test Tarixi</h3>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Sana</th>
+                                    <th>IP Manzil</th>
+                                    <th>MAC Manzil</th>
+                                    <th>Qurilma Nomi</th>
+                                    <th>Download</th>
+                                    <th>Upload</th>
+                                    <th>Ping</th>
+                                    <th>Holati</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-table">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
